@@ -11,10 +11,11 @@ body {
 }
 
 header {
-  background-color: #003366; /* Cor do logotipo */
+  background-color: #101820; /* cor escura do logo */
   padding: 15px 20px;
   color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .topbar {
@@ -22,12 +23,17 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
 }
 
 .topbar h1 {
   font-size: 1.5rem;
   font-weight: 800;
+  flex-grow: 1;
 }
 
 .topbar input {
@@ -40,10 +46,10 @@ header {
 
 .menu-toggle {
   display: none;
+  font-size: 28px;
   background: none;
   border: none;
   color: white;
-  font-size: 1.8rem;
   cursor: pointer;
 }
 
@@ -52,7 +58,7 @@ nav ul {
   list-style: none;
   margin-top: 15px;
   gap: 20px;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.4s ease;
 }
 
 nav a {
@@ -113,12 +119,11 @@ main {
   text-decoration: none;
   border-radius: 5px;
   display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
   background-color: #fb8c00;
-  transform: scale(1.05);
 }
 
 footer {
@@ -130,26 +135,6 @@ footer {
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-in-out;
-  }
-
-  nav.open {
-    max-height: 300px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-  }
-
   .topbar {
     flex-direction: column;
     align-items: flex-start;
@@ -157,5 +142,23 @@ footer {
 
   .topbar input {
     width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 0;
+  }
+
+  nav ul.ativo {
+    max-height: 300px;
+    margin-top: 15px;
   }
 }
