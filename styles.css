@@ -1,123 +1,50 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f6f7f9;
-  color: #1a1a1a;
-}
-
-header {
-  background-color: #0b0c10; /* fundo escuro do logo */
-  padding: 15px 20px;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.topbar h1 {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.topbar input {
-  width: 40%;
-  padding: 8px;
+/* Botão de menu (hambúrguer) */
+.menu-toggle {
+  display: none;
+  background: none;
   border: none;
-  border-radius: 4px;
-  margin-top: 10px;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
+/* Menu padrão */
 nav ul {
   display: flex;
   list-style: none;
   margin-top: 15px;
   gap: 20px;
+  transition: max-height 0.3s ease;
 }
 
-nav a {
-  text-decoration: none;
-  color: #f0f0f0;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 
-nav a:hover {
-  color: #ff9800; /* destaque ao passar o mouse */
-}
+  nav {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
 
-main {
-  padding: 30px 20px;
-}
+  nav.open {
+    max-height: 300px; /* Altura suficiente para mostrar os itens */
+  }
 
-.destaque h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
 
-.produtos {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-}
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.produto {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  padding: 15px;
-  width: 220px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.produto:hover {
-  transform: translateY(-5px);
-}
-
-.produto img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.produto h3 {
-  margin: 10px 0 5px;
-}
-
-.produto p {
-  font-size: 1.1rem;
-  color: #2e7d32;
-  margin-bottom: 10px;
-}
-
-.btn {
-  background-color: #ff9800;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
-  transition: background-color 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #fb8c00;
-}
-
-footer {
-  background-color: #0b0c10; /* mesmo fundo escuro do topo */
-  color: #ccc;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 30px;
+  .topbar input {
+    width: 100%;
+  }
 }
