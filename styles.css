@@ -1,4 +1,43 @@
-/* Botão de menu (hambúrguer) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f1f3f6;
+  color: #333;
+}
+
+header {
+  background-color: #003366; /* Cor do logotipo */
+  padding: 15px 20px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topbar h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.topbar input {
+  width: 40%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -8,7 +47,6 @@
   cursor: pointer;
 }
 
-/* Menu padrão */
 nav ul {
   display: flex;
   list-style: none;
@@ -17,7 +55,80 @@ nav ul {
   transition: max-height 0.3s ease;
 }
 
-/* Responsivo para telas menores */
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+main {
+  padding: 30px 20px;
+}
+
+.destaque h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.produtos {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.produto {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+}
+
+.produto img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.produto h3 {
+  margin: 10px 0 5px;
+}
+
+.produto p {
+  font-size: 1.1rem;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #ff9800;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #fb8c00;
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #e0e0e0;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -30,7 +141,7 @@ nav ul {
   }
 
   nav.open {
-    max-height: 300px; /* Altura suficiente para mostrar os itens */
+    max-height: 300px;
   }
 
   nav ul {
